@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tipPercentOutput: UILabel!
     
+    @IBOutlet weak var billAmtInput: UITextField!
+    
     @IBAction func onSliderChanged(_ sender: Any) {
         let val = slider.value
         tipPercentOutput.text = "Tip Amount: \(val)%"
