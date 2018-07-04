@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         if billAmtInput.text != "" {
             let amt = billAmtInput.text!
             let tipAmt: Float = Float(amt)! * slider.value * 0.01
-            print(tipAmt)
+            tipDollarAmtOutput.text = "Tip Amount: $\(tipAmt)"
         } else {
             let alert = UIAlertController(title: "Oops!", message: "Error: you must enter a valid number value for the bill. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     @IBAction func onSliderChanged(_ sender: Any) {
         let val = slider.value
-        tipPercentOutput.text = "Tip Amount: \(val)%"
+        tipPercentOutput.text = "Tip Percent: \(val)%"
     }
     
     override func viewDidLoad() {

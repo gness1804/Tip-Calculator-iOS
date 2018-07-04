@@ -66,7 +66,7 @@
                                     <action selector="onCalcButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XfE-yG-JB9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYG-YP-p49">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a Value to Calculate Tip." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYG-YP-p49">
                                 <rect key="frame" x="16" y="371" width="343" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="1kC-YE-Lf3"/>
