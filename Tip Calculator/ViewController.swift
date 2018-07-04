@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     
     func calculateTip()  {
         if billAmtInput.text != "" {
-            print(billAmtInput.text!)
+            let amt = billAmtInput.text!
+            let tipAmt: Float = Float(amt)! * slider.value * 0.01
+            print(tipAmt)
         } else {
             let alert = UIAlertController(title: "Oops!", message: "Error: you must enter a valid number value for the bill. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
