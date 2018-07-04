@@ -16,6 +16,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var billAmtInput: UITextField!
     
+    @IBOutlet weak var tipDollarAmtOutput: UILabel!
+    
+    @IBAction func onCalcButtonPressed(_ sender: Any) {
+        print("Calc button pressed.")
+    }
+    
     @IBAction func onSliderChanged(_ sender: Any) {
         let val = slider.value
         tipPercentOutput.text = "Tip Amount: \(val)%"
