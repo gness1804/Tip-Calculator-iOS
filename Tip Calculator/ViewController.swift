@@ -27,10 +27,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onPlusButtonPressed(_ sender: Any) {
-        slider.value = slider.value + 1
+        slider.value += 1
         showTipPercentOutput(val: slider.value)
     }
     
+    @IBAction func onMinusButtonPressed(_ sender: Any) {
+        slider.value -= 1
+        showTipPercentOutput(val: slider.value)
+    }
     func roundToTwoDecPlaces(num: Float) -> Float {
         return (num * 100).rounded() / 100
     }
