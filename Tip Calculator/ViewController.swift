@@ -6,6 +6,8 @@
 //  Copyright © 2018 Graham Nessler. All rights reserved.
 //
 
+//thanks to: https://stackoverflow.com/questions/34929932/round-up-double-to-2-decimal-places/34930127
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -20,13 +22,32 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalPaymentAmt: UILabel!
     
+    func showTipPercentOutput(val: Float) {
+        tipPercentOutput.text = "Tip Percent: \(roundf(val))%"
+    }
+    
+    @IBAction func onPlusButtonPressed(_ sender: Any) {
+        slider.value += 1
+        showTipPercentOutput(val: slider.value)
+    }
+    
+    @IBAction func onMinusButtonPressed(_ sender: Any) {
+        slider.value -= 1
+        showTipPercentOutput(val: slider.value)
+    }
+    func roundToTwoDecPlaces(num: Float) -> Float {
+        return (num * 100).rounded() / 100
+    }
+    
     func calculateTip()  {
         if billAmtInput.text != "" {
-            let amt = billAmtInput.text!
-            let tipAmt: Float = Float(amt)! * slider.value * 0.01
-            tipDollarAmtOutput.text = "Tip Amount: $\(tipAmt)"
+            let amt: String = billAmtInput.text!
+            let roundedAmt: Float = roundToTwoDecPlaces(num: Float(amt)!)
+            let tipAmt: Float = roundedAmt * slider.value * 0.01
+            let roundedTipAmt: Float = roundToTwoDecPlaces(num: tipAmt)
+            tipDollarAmtOutput.text = "Tip Amount: $\(roundedTipAmt)"
             let totalBill: Float = Float(amt)! + tipAmt
-            totalPaymentAmt.text = "Your total payment is $\(totalBill)."
+            totalPaymentAmt.text = "Your total payment is $\(roundToTwoDecPlaces(num: totalBill))."
         } else {
             let alert = UIAlertController(title: "Oops!", message: "Error: you must enter a valid number value for the bill. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
@@ -40,12 +61,12 @@ class ViewController: UIViewController {
     
     @IBAction func onSliderChanged(_ sender: Any) {
         let val = slider.value
-        tipPercentOutput.text = "Tip Percent: \(val)%"
+       showTipPercentOutput(val: val)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        showTipPercentOutput(val: slider.value)
     }
 
     override func didReceiveMemoryWarning() {
