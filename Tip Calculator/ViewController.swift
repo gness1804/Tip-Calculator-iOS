@@ -6,6 +6,8 @@
 //  Copyright © 2018 Graham Nessler. All rights reserved.
 //
 
+//thanks to: https://stackoverflow.com/questions/34929932/round-up-double-to-2-decimal-places/34930127
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -19,6 +21,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipDollarAmtOutput: UILabel!
     
     @IBOutlet weak var totalPaymentAmt: UILabel!
+    
+    func showTipPercentOutput(val: Float) {
+        tipPercentOutput.text = "Tip Percent: \(roundf(val))%"
+    }
+    
+    @IBAction func onPlusButtonPressed(_ sender: Any) {
+        slider.value = slider.value + 1
+        showTipPercentOutput(val: slider.value)
+    }
     
     func roundToTwoDecPlaces(num: Float) -> Float {
         return (num * 100).rounded() / 100
@@ -46,8 +57,7 @@ class ViewController: UIViewController {
     
     @IBAction func onSliderChanged(_ sender: Any) {
         let val = slider.value
-        let roundedVal = roundf(Float(val))
-        tipPercentOutput.text = "Tip Percent: \(roundedVal)%"
+       showTipPercentOutput(val: val)
     }
     
     override func viewDidLoad() {
