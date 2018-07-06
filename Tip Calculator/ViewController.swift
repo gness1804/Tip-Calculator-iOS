@@ -23,7 +23,8 @@ class ViewController: UIViewController {
     func calculateTip()  {
         if billAmtInput.text != "" {
             let amt = billAmtInput.text!
-            let tipAmt: Float = Float(amt)! * slider.value * 0.01
+            let roundedAmt = roundf(Float(amt)!)
+            let tipAmt: Float = roundedAmt * roundf(slider.value) * 0.01
             tipDollarAmtOutput.text = "Tip Amount: $\(tipAmt)"
             let totalBill: Float = Float(amt)! + tipAmt
             totalPaymentAmt.text = "Your total payment is $\(totalBill)."
@@ -40,7 +41,8 @@ class ViewController: UIViewController {
     
     @IBAction func onSliderChanged(_ sender: Any) {
         let val = slider.value
-        tipPercentOutput.text = "Tip Percent: \(val)%"
+        let roundedVal = roundf(Float(val))
+        tipPercentOutput.text = "Tip Percent: \(roundedVal)%"
     }
     
     override func viewDidLoad() {
