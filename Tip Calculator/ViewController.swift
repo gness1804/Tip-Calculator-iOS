@@ -20,14 +20,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalPaymentAmt: UILabel!
     
+    func roundToTwoDecPlaces(num: Float) -> Float {
+        return (num * 100).rounded() / 100
+    }
+    
     func calculateTip()  {
         if billAmtInput.text != "" {
-            let amt = billAmtInput.text!
-            let roundedAmt = roundf(Float(amt)!)
-            let tipAmt: Float = roundedAmt * roundf(slider.value) * 0.01
-            tipDollarAmtOutput.text = "Tip Amount: $\(tipAmt)"
+            let amt: String = billAmtInput.text!
+            let roundedAmt: Float = roundToTwoDecPlaces(num: Float(amt)!)
+            let tipAmt: Float = roundedAmt * slider.value * 0.01
+            let roundedTipAmt: Float = roundToTwoDecPlaces(num: tipAmt)
+            tipDollarAmtOutput.text = "Tip Amount: $\(roundedTipAmt)"
             let totalBill: Float = Float(amt)! + tipAmt
-            totalPaymentAmt.text = "Your total payment is $\(totalBill)."
+            totalPaymentAmt.text = "Your total payment is $\(roundToTwoDecPlaces(num: totalBill))."
         } else {
             let alert = UIAlertController(title: "Oops!", message: "Error: you must enter a valid number value for the bill. Please try again.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
