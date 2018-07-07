@@ -22,6 +22,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var totalPaymentAmt: UILabel!
     
+    func resetAppState() {
+        slider.value = 20
+        showTipPercentOutput(val: slider.value)
+        billAmtInput.text = ""
+    }
+    
+    @IBAction func onResetPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Warning!", message: "Are you sure you want to reset the app?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive, handler: { (action) in
+            self.resetAppState()
+        }))
+        self.present(alert, animated: true)
+    }
     func showTipPercentOutput(val: Float) {
         tipPercentOutput.text = "Tip Percent: \(roundf(val))%"
     }
