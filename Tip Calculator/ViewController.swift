@@ -43,6 +43,8 @@ class ViewController: UIViewController {
         slider.value = 20
         showTipPercentOutput(val: slider.value)
         billAmtInput.text = ""
+        tipDollarAmtOutput.text = "Enter a Value to Calculate Tip."
+        totalPaymentAmt.text = "Your Total Payment..."
     }
     
     func calculateTip()  {
