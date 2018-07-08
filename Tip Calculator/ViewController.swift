@@ -39,6 +39,12 @@ class ViewController: UIViewController {
         return (num * 100).rounded() / 100
     }
     
+    @IBAction func onResetPressed(_ sender: Any) {
+        slider.value = 20
+        showTipPercentOutput(val: slider.value)
+        billAmtInput.text = ""
+    }
+    
     func calculateTip()  {
         if billAmtInput.text != "" {
             let amt: String = billAmtInput.text!

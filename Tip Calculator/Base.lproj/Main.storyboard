@@ -103,11 +103,20 @@
                                     <action selector="onMinusButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sd4-6Y-Xam"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f25-Fh-Sff">
+                                <rect key="frame" x="339" y="289" width="42" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="onResetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvd-8I-AQp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pYG-YP-p49" firstAttribute="top" secondItem="9Gn-wA-LAo" secondAttribute="bottom" constant="67" id="02H-02-W9c"/>
                             <constraint firstItem="bUV-Tb-7WS" firstAttribute="top" secondItem="mpX-KS-LaQ" secondAttribute="bottom" constant="8" symbolic="YES" id="0fj-dB-6pZ"/>
+                            <constraint firstItem="f25-Fh-Sff" firstAttribute="top" secondItem="mpX-KS-LaQ" secondAttribute="bottom" constant="9" id="46d-hJ-SxI"/>
                             <constraint firstItem="mpX-KS-LaQ" firstAttribute="leading" secondItem="BzT-gF-7lc" secondAttribute="trailing" constant="8" symbolic="YES" id="4Uw-pb-0lh"/>
                             <constraint firstItem="0oH-Z7-F84" firstAttribute="top" secondItem="mj9-Te-ZPg" secondAttribute="bottom" constant="-1" id="4xQ-qs-8Zm"/>
                             <constraint firstItem="Zin-uG-EO2" firstAttribute="top" secondItem="pYG-YP-p49" secondAttribute="bottom" constant="62" id="6JZ-u0-5in"/>
@@ -123,8 +132,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bUV-Tb-7WS" secondAttribute="trailing" constant="141" id="Jlj-Qr-YzC"/>
                             <constraint firstItem="mj9-Te-ZPg" firstAttribute="top" secondItem="XO0-ot-tUi" secondAttribute="bottom" constant="34" id="MEr-7Y-QwS"/>
                             <constraint firstItem="pYG-YP-p49" firstAttribute="centerX" secondItem="U8P-Rl-JYq" secondAttribute="centerX" id="Ml9-Tu-7A7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f25-Fh-Sff" secondAttribute="trailing" constant="33" id="Ouv-Gi-mwd"/>
                             <constraint firstItem="mpX-KS-LaQ" firstAttribute="leading" secondItem="9Gn-wA-LAo" secondAttribute="trailing" constant="46" id="Q6Z-1o-dtE"/>
                             <constraint firstItem="XO0-ot-tUi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rhc-QN-H3C"/>
+                            <constraint firstItem="f25-Fh-Sff" firstAttribute="leading" secondItem="bUV-Tb-7WS" secondAttribute="trailing" constant="66" id="SBt-cj-IGG"/>
                             <constraint firstItem="9Gn-wA-LAo" firstAttribute="top" secondItem="mj9-Te-ZPg" secondAttribute="bottom" constant="86" id="T8a-Wj-FHz"/>
                             <constraint firstItem="mpX-KS-LaQ" firstAttribute="trailing" secondItem="mj9-Te-ZPg" secondAttribute="trailing" id="VcO-Uy-pOn"/>
                             <constraint firstItem="pYG-YP-p49" firstAttribute="top" secondItem="bUV-Tb-7WS" secondAttribute="bottom" constant="24" id="bFl-3n-94S"/>
