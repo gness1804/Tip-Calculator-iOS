@@ -26,6 +26,14 @@ class ViewController: UIViewController {
         tipPercentOutput.text = "Tip Percent: \(roundf(val))%"
     }
     
+    func resetApp() {
+        slider.value = 20
+        showTipPercentOutput(val: slider.value)
+        billAmtInput.text = ""
+        tipDollarAmtOutput.text = "Enter a Value to Calculate Tip."
+        totalPaymentAmt.text = "Your Total Payment..."
+    }
+    
     @IBAction func onPlusButtonPressed(_ sender: Any) {
         slider.value += 1
         showTipPercentOutput(val: slider.value)
@@ -35,16 +43,13 @@ class ViewController: UIViewController {
         slider.value -= 1
         showTipPercentOutput(val: slider.value)
     }
+    
     func roundToTwoDecPlaces(num: Float) -> Float {
         return (num * 100).rounded() / 100
     }
     
     @IBAction func onResetPressed(_ sender: Any) {
-        slider.value = 20
-        showTipPercentOutput(val: slider.value)
-        billAmtInput.text = ""
-        tipDollarAmtOutput.text = "Enter a Value to Calculate Tip."
-        totalPaymentAmt.text = "Your Total Payment..."
+        resetApp()
     }
     
     func calculateTip()  {
